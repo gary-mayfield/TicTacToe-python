@@ -73,7 +73,7 @@ def chooseRandomMoveFromList(board, movesList):
         if isSpaceFree(board, i):
             possibleMoves.append(i)
 
-    if len(possibleMoves) != 0:
+    if len(possibleMoves) > 0:
         return random.choice(possibleMoves)
     else:
         return None
@@ -111,7 +111,7 @@ def isBoardFull(board):
     for i in range(1, 10):
         if isSpaceFree(board, i):
             return False
-        return True
+    return True
         
 
 print('Welcome to Tic Tac Toe!')
@@ -137,6 +137,7 @@ while True:
                 if isBoardFull(theBoard):
                     drawBoard(theBoard)
                     print('The game is a tie!')
+                    
                     break
                 else:
                     turn = 'computer'
